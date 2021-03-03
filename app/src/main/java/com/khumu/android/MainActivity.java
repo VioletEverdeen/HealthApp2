@@ -11,7 +11,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.khumu.android.login.LoginActivity;
-
+//임시수정
 public class MainActivity extends AppCompatActivity {
     private final static String TAG = "MainActivity";
     @Override
