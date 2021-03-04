@@ -33,32 +33,35 @@
                         android:layout_width="wrap_content"
                         android:layout_gravity="center"
                         android:backgroundTint="@color/white"
-                        android:text="운동시작"
+                        android:text="팔"
+                        android:textColor="@color/red_500" />
+
+                    <Button
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:backgroundTint="@color/white"
+                        android:text="등"
                         android:textColor="@color/red_500" />
 
                 </TableRow>
                 <TableRow>
+
                     <Button
                         style="?android:attr/borderlessButtonStyle"
-                        android:layout_gravity="center"
                         android:layout_width="wrap_content"
+                        android:layout_gravity="center"
                         android:backgroundTint="@color/white"
-                        android:textColor="@color/red_500"
-                        android:text="수강신청"/>
+                        android:text="복부"
+                        android:textColor="@color/red_500" />
+
                     <Button
                         style="?android:attr/borderlessButtonStyle"
-                        android:layout_gravity="center"
                         android:layout_width="wrap_content"
-                        android:backgroundTint="@color/white"
-                        android:textColor="@color/red_500"
-                        android:text="동아리"/>
-                    <Button
-                        style="?android:attr/borderlessButtonStyle"
                         android:layout_gravity="center"
-                        android:layout_width="wrap_content"
                         android:backgroundTint="@color/white"
-                        android:textColor="@color/red_500"
-                        android:text="학식"/>
+                        android:text="다리"
+                        android:textColor="@color/red_500" />
 
 
                 </TableRow>
@@ -87,11 +90,12 @@
                     android:textColor="@color/red_500"
                     android:textSize="@dimen/big_title_font_size"
                     android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/layout_default_space"
-                    android:text="- 다음 주 수요일부터는 수강신청 기간이므로 시간표를 확인해주세요!"
+                    android:text="근전도 센서를 부착해주세요"
                     android:textColor="@color/gray_700"
                     android:textSize="@dimen/default_font_size" />
 
@@ -115,7 +119,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/layout_default_space"
-                    android:text="chart"
+                    android:text="EMG"
                     android:textColor="@color/red_500"
                     android:textSize="@dimen/big_title_font_size"
                     android:textStyle="bold" />
