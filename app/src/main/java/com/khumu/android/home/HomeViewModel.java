@@ -72,23 +72,23 @@ public class HomeViewModel extends ViewModel {
     }
 
     public void listNotifications() {
-        Call<NotificationListResponse> call = ns.getNotifications(KhumuApplication.getUsername());
-        call.enqueue(new Callback<NotificationListResponse>() {
-            @Override
-            public void onResponse(Call<NotificationListResponse> call, Response<NotificationListResponse> response) {
-                if (response.code() == 200) {
-                    notifications.postValue(response.body().getData());
-                } else{
-                    Log.e(TAG, "onResponse: " + response.code());
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<NotificationListResponse> call, Throwable t) {
-                t.printStackTrace();
-            }
-        });
+       // Call<NotificationLㅇistResponse> call = ns.getNotifications(KhumuApplication.getUsername());
+//        call.enqueue(new Callback<NotificationListResponse>() {
+//            @Override
+//            public void onResponse(Call<NotificationListResponse> call, Response<NotificationListResponse> response) {
+//                if (response.code() == 200) {
+//                    notifications.postValue(response.body().getData());
+//                } else{
+//                    Log.e(TAG, "onResponse: " + response.code());
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<NotificationListResponse> call, Throwable t) {
+//                t.printStackTrace();
+//            }
+//        });
     }
 
 }

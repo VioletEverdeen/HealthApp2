@@ -2,9 +2,11 @@ package com.khumu.android.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.WorkSource;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -38,10 +40,14 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private Toolbar toolbar;
     private TextView notificationCountTV;
+    private Button WorkStart;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         // Layout inflate 이전
         // savedInstanceState을 이용해 다룰 데이터가 있으면 다룸.
+
+
         KhumuApplication.container.inject(this);
         super.onCreate(savedInstanceState);
         homeViewModel = new ViewModelProvider(this, new ViewModelProvider.Factory() {
@@ -57,6 +63,10 @@ public class HomeFragment extends Fragment {
                 R.layout.layout_home_recent_article_item,
                 new ArrayList<Article>());
     }
+
+
+
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -75,6 +85,7 @@ public class HomeFragment extends Fragment {
         notificationCountTV = view.findViewById(R.id.notification_count_tv);
         recentArticlesListView = view.findViewById(R.id.recent_articles_list);
         recentArticlesListView.setAdapter(recentArticleAdapter);
+        WorkStart=view.findViewById(R.id.WorkStart);
         homeViewModel.getLiveDataRecentArticles().observe(getViewLifecycleOwner(), new Observer<List<Article>>() {
             @Override
             public void onChanged(List<Article> articles) {
@@ -86,12 +97,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        homeViewModel.getNotifications().observe(getViewLifecycleOwner(), notifications -> {
-            notificationCountTV.setText(String.valueOf(
-                    notifications.stream().filter(
-                            n->!n.isRead()
-                    ).count()));
-        });
+//        homeViewModel.getNotifications().observe(getViewLifecycleOwner(), notifications -> {
+//            notificationCountTV.setText(String.valueOf(
+//                    notifications.stream().filter(
+//                            n->!n.isRead()
+//                    ).count()));
+//        });
 
         setEventListeners();
     }
@@ -101,7 +112,14 @@ public class HomeFragment extends Fragment {
             Intent intent = new Intent(HomeFragment.this.getActivity(), NotificationActivity.class);
             startActivity(intent);
         });
+
+        WorkStart.setOnClickListener(l->{
+            Intent intent = new Intent(HomeFragment.this.getActivity(), FragmentStartActivity.class);
+            startActivity(intent);
+        });
     }
+
+
 
     @Override
     public void onResume() {

@@ -29,37 +29,13 @@
                 <TableRow>
 
                     <Button
+                        android:id="@+id/WorkStart"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_gravity="center"
                         android:backgroundTint="@color/white"
                         android:text="운동시작"
                         android:textColor="@color/red_500" />
-
-                </TableRow>
-                <TableRow>
-                    <Button
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:backgroundTint="@color/white"
-                        android:textColor="@color/red_500"
-                        android:text="수강신청"/>
-                    <Button
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:backgroundTint="@color/white"
-                        android:textColor="@color/red_500"
-                        android:text="동아리"/>
-                    <Button
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:backgroundTint="@color/white"
-                        android:textColor="@color/red_500"
-                        android:text="학식"/>
-
 
                 </TableRow>
             </TableLayout>
