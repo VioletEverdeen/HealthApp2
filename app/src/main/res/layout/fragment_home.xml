@@ -63,11 +63,12 @@
                     android:textColor="@color/red_500"
                     android:textSize="@dimen/big_title_font_size"
                     android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/layout_default_space"
-                    android:text="- 다음 주 수요일부터는 수강신청 기간이므로 시간표를 확인해주세요!"
+                    android:text="내 정보 및 건강 상태"
                     android:textColor="@color/gray_700"
                     android:textSize="@dimen/default_font_size" />
 

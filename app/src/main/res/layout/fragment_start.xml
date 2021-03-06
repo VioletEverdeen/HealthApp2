@@ -7,34 +7,61 @@
             name="viewModel"
             type="com.khumu.android.home.HomeViewModel" />
     </data>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
-        <include layout="@layout/toolbar"
-            android:id="@+id/toolbar"/>
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/plugins_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            app:cardElevation="4dp"
-            app:cardCornerRadius="6dp"
             android:layout_margin="@dimen/layout_default_space"
-            android:background="@color/white">
+            android:background="@color/white"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="4dp">
+
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:stretchColumns="*">
-                <TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="운동할 위치를 골라주세요"
+                        android:textSize="14sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
 
                     <Button
+                        android:id="@+id/arm"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_gravity="center"
                         android:backgroundTint="@color/white"
                         android:text="팔"
                         android:textColor="@color/red_500" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
 
                     <Button
                         style="?android:attr/borderlessButtonStyle"
@@ -43,8 +70,8 @@
                         android:backgroundTint="@color/white"
                         android:text="등"
                         android:textColor="@color/red_500" />
-
                 </TableRow>
+
                 <TableRow>
 
                     <Button
@@ -54,6 +81,11 @@
                         android:backgroundTint="@color/white"
                         android:text="복부"
                         android:textColor="@color/red_500" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="214dp">
 
                     <Button
                         style="?android:attr/borderlessButtonStyle"
@@ -68,69 +100,6 @@
             </TableLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/khu_notifications_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardElevation="4dp"
-            app:cardCornerRadius="10dp"
-            android:layout_margin="@dimen/layout_default_space"
-            android:background="@color/white">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="@dimen/layout_default_space">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layout_default_space"
-                    android:text="MyHealth"
-                    android:textColor="@color/red_500"
-                    android:textSize="@dimen/big_title_font_size"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layout_default_space"
-                    android:text="근전도 센서를 부착해주세요"
-                    android:textColor="@color/gray_700"
-                    android:textSize="@dimen/default_font_size" />
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/recent_posts_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardElevation="4dp"
-            app:cardCornerRadius="10dp"
-            android:layout_margin="@dimen/layout_default_space"
-            android:background="@color/white">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="@dimen/layout_default_space">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layout_default_space"
-                    android:text="EMG"
-                    android:textColor="@color/red_500"
-                    android:textSize="@dimen/big_title_font_size"
-                    android:textStyle="bold" />
-                <ListView
-                    android:id="@+id/recent_articles_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layout_default_space" />
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
 </layout>
