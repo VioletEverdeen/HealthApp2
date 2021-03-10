@@ -83,10 +83,13 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void addEventListeners(){
+        //버튼누르면
         this.signUpBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 KhumuUser user = new KhumuUser(
+
+                        //각각 텍스트를 뽑음
                     usernameET.getText().toString(),
                     nicknameET.getText().toString(),
                     passwordET.getText().toString(),

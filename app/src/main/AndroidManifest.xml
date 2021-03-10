@@ -72,6 +72,20 @@ android:usesCleartextTraffic="true" 는 localhost가 막혀서 커스터마이�
             >
 
         </activity>
+        <activity android:name=".home.WorkArmActivity"></activity>
+        <activity
+            android:name=".home.WorkBackActivity"
+            >
+        </activity>
+        <activity
+            android:name=".home.WorkLegActivity"
+            >
+        </activity>
+        <activity
+            android:name=".home.WorkStomachActivity"
+            >
+        </activity>
+
 
     </application>
 

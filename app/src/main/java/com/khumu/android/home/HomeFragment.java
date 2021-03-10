@@ -32,7 +32,7 @@ import javax.inject.Inject;
 
 public class HomeFragment extends Fragment {
     @Inject
-    public BoardRepository br;
+    public BoardRepository br; //게시판가져오기
     @Inject
     public NotificationService ns;
     private RecentArticleAdapter recentArticleAdapter;
