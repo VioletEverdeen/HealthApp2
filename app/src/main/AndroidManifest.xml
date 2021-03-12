@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.khumu.android">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<!--
-android:usesCleartextTraffic="true" 는 localhost가 막혀서 커스터마이징징
--->
+    <!--
+    android:usesCleartextTraffic="true" 는 localhost가 막혀서 커스터마이징징
+    -->
 
     <application
         android:name=".KhumuApplication"
@@ -45,10 +48,10 @@ android:usesCleartextTraffic="true" 는 localhost가 막혀서 커스터마이�
             android:name=".notifications.NotificationActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize">
-<!--                        <intent-filter>-->
-<!--                            <action android:name="android.intent.action.MAIN" />-->
-<!--                            <category android:name="android.intent.category.LAUNCHER" />-->
-<!--                        </intent-filter>-->
+            <!--                        <intent-filter>-->
+            <!--                            <action android:name="android.intent.action.MAIN" />-->
+            <!--                            <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--                        </intent-filter>-->
         </activity>
         <activity
             android:name=".articleWrite.ArticleModifyActivity"
@@ -68,24 +71,10 @@ android:usesCleartextTraffic="true" 는 localhost가 막혀서 커스터마이�
 
         </activity>
         <activity
-            android:name=".home.FragmentStartActivity"
-            >
+            android:name=".home.FragmentStartActivity">
 
         </activity>
-        <activity android:name=".home.WorkArmActivity"></activity>
-        <activity
-            android:name=".home.WorkBackActivity"
-            >
-        </activity>
-        <activity
-            android:name=".home.WorkLegActivity"
-            >
-        </activity>
-        <activity
-            android:name=".home.WorkStomachActivity"
-            >
-        </activity>
-
+        <activity android:name=".home.WorkActivity"></activity>
 
     </application>
 

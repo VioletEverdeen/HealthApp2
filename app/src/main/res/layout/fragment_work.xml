@@ -38,12 +38,14 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/layout_default_space"
                         android:text="운동 위치"
-                        android:textSize="14sp" />
+                        android:textColor="@color/red_500"
+                        android:textSize="@dimen/big_title_font_size"
+                        android:textStyle="bold" />
+
                 </TableRow>
 
                 <TableRow
@@ -51,14 +53,14 @@
                     android:layout_height="match_parent">
 
                     <Button
-                        android:id="@+id/arm"
+                        android:id="@+id/bodyText_button"
                         style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="78dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:backgroundTint="@color/white"
-                        android:text="팔"
-                        android:textColor="@color/red_500" />
+                        android:text="팔 운동을 시작합니다!"
+                        android:textColor="@color/black" />
                 </TableRow>
 
             </TableLayout>
@@ -89,18 +91,32 @@
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/body_imageView"
                     android:layout_width="match_parent"
-                    android:layout_height="302dp"
+                    android:layout_height="@dimen/default_image_height"
                     app:srcCompat="@drawable/pic_arm" />
 
+                <Button
+                    android:id="@+id/btnConnect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="연결하기"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
+                    android:id="@+id/textViewReceive"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/layout_default_space"
                     android:text="근력 측정"
                     android:textColor="@color/gray_700"
-                    android:textSize="@dimen/default_font_size" />
+                    android:textSize="@dimen/default_font_size"
+                    android:gravity="center"/>
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

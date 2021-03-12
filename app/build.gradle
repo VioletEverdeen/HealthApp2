@@ -112,4 +112,7 @@ dependencies {
 
     compileOnly 'org.projectlombok:lombok:1.18.16'
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    // 블루투스
+    implementation 'com.akexorcist:bluetoothspp:1.0.0'
 }

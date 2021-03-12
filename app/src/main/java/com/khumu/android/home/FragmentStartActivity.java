@@ -9,9 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.khumu.android.R;
 
-
-
 public class FragmentStartActivity extends AppCompatActivity {
+    public static String bodyPart = "";
+    public void setBodyPart(String bodyPart) {
+        this.bodyPart = bodyPart;
+    }
+
+    public static String getBodyPart() {
+        return bodyPart;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +28,7 @@ public class FragmentStartActivity extends AppCompatActivity {
         arm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), WorkArmActivity.class );
-                startActivityForResult(intent,1);
+                sendIntent("arm", 1);
             }
         });
 
@@ -31,8 +36,7 @@ public class FragmentStartActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), WorkBackActivity.class );
-                startActivityForResult(intent,2);
+                sendIntent("back", 2);
             }
         });
 
@@ -40,8 +44,7 @@ public class FragmentStartActivity extends AppCompatActivity {
         leg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), WorkLegActivity.class );
-                startActivityForResult(intent,3);
+                sendIntent("leg", 3);
             }
         });
 
@@ -49,12 +52,15 @@ public class FragmentStartActivity extends AppCompatActivity {
         stomach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), WorkStomachActivity.class );
-                startActivityForResult(intent,4);
+                sendIntent("stomach", 4);
             }
         });
 
     }
 
-
+    private void sendIntent(String bodyPart, int requestCode) {
+        setBodyPart(bodyPart);
+        Intent intent = new Intent(getApplicationContext(), WorkActivity.class);
+        startActivityForResult(intent, requestCode);
+    }
 }
