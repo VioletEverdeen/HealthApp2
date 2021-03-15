@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.khumu.android">
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -72,19 +74,20 @@ android:usesCleartextTraffic="true" 는 localhost가 막혀서 커스터마이�
             >
 
         </activity>
-        <activity android:name=".home.WorkArmActivity"></activity>
-        <activity
-            android:name=".home.WorkBackActivity"
-            >
-        </activity>
-        <activity
-            android:name=".home.WorkLegActivity"
-            >
-        </activity>
-        <activity
-            android:name=".home.WorkStomachActivity"
-            >
-        </activity>
+<!--        <activity android:name=".home.WorkArmActivity"></activity>-->
+<!--        <activity-->
+<!--            android:name=".home.WorkBackActivity"-->
+<!--            >-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".home.WorkLegActivity"-->
+<!--            >-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".home.WorkStomachActivity"-->
+<!--            >-->
+<!--        </activity>-->
+        <activity android:name=".home.WorkActivity"></activity>
 
 
     </application>

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,11 +22,11 @@ import com.google.android.flexbox.FlexDirection;
 import com.google.android.flexbox.FlexboxLayoutManager;
 import com.google.android.flexbox.JustifyContent;
 import com.khumu.android.KhumuApplication;
-import com.khumu.android.data.Tag;
+import com.khumu.android.R;
 import com.khumu.android.data.Board;
+import com.khumu.android.data.Tag;
 import com.khumu.android.databinding.FragmentMyPageBinding;
 import com.khumu.android.feed.SingleBoardFeedActivity;
-import com.khumu.android.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,7 +87,7 @@ public class MyPageFragment extends Fragment {
         followingArticleTagsLayoutManager = new FlexboxLayoutManager(this.getContext());
         followingArticleTagsLayoutManager.setFlexDirection(FlexDirection.ROW); // 기본값임
         followingArticleTagsLayoutManager.setJustifyContent(JustifyContent.FLEX_START); // 기본값임
-        fragmentMyPageBinding.myPageFollowingArticleTagsRecyclerView.setLayoutManager(followingArticleTagsLayoutManager);
+//        fragmentMyPageBinding.myPageFollowingArticleTagsRecyclerView.setLayoutManager(followingArticleTagsLayoutManager);
 
         // dummy tags
         List<Tag> l = new ArrayList<>();
@@ -110,7 +109,7 @@ public class MyPageFragment extends Fragment {
         l.add(new Tag("world", true));
 
         followingArticleTagAdapter = new ArticleTagAdapter(l);
-        fragmentMyPageBinding.myPageFollowingArticleTagsRecyclerView.setAdapter(followingArticleTagAdapter);
+  //      fragmentMyPageBinding.myPageFollowingArticleTagsRecyclerView.setAdapter(followingArticleTagAdapter);
     }
 
     public void onClickArticlesWrittenByMeTV(View v){
