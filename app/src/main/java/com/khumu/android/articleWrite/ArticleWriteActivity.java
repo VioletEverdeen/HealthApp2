@@ -122,7 +122,7 @@ public class ArticleWriteActivity extends AppCompatActivity {
         });
     }
 
-    public void onClickBoardListPopup(View v){
+    public void onClickBoardListPopup(View v){//activity_article_write.xml 파일에서 33번째줄 android:onClick="onClickBoardListPopup">
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(ArticleWriteActivity.this);
         builderSingle.setTitle("게시판을 선택해주세요.");
 

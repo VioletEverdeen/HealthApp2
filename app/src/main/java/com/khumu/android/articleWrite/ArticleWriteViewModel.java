@@ -1,46 +1,27 @@
 package com.khumu.android.articleWrite;
 
-import android.content.ClipData;
-import android.content.ContentResolver;
 import android.content.Context;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.FileUtils;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.Bindable;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.bumptech.glide.Glide;
 import com.esafirm.imagepicker.model.Image;
 import com.khumu.android.KhumuApplication;
-import com.khumu.android.data.Board;
 import com.khumu.android.data.Article;
+import com.khumu.android.data.Board;
 import com.khumu.android.data.rest.BoardListResponse;
 import com.khumu.android.data.rest.ImageUploadResponse;
-import com.khumu.android.repository.ArticleRepository;
-import com.khumu.android.repository.BoardRepository;
 import com.khumu.android.retrofitInterface.ArticleService;
 import com.khumu.android.retrofitInterface.BoardService;
 import com.khumu.android.retrofitInterface.ImageService;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import okhttp3.MediaType;
@@ -49,6 +30,8 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.github.mikephil.charting.charts.Chart.LOG_TAG;
 
 public class ArticleWriteViewModel extends ViewModel {
     private final static String TAG = "ArticleWriteViewModel";
@@ -82,7 +65,7 @@ public class ArticleWriteViewModel extends ViewModel {
     }
 
     public MutableLiveData<List<Board>> getLiveBoards(){
-        return boards;}
+        return boards;} // 이부분 못받아오는 듯한 (종현님 피드백)
 
     public MutableLiveData<List<ImagePath>> getUploadingImagePaths() {
         return uploadingImagePaths;
@@ -234,7 +217,13 @@ public class ArticleWriteViewModel extends ViewModel {
         call.enqueue(new Callback<BoardListResponse>() {
             @Override
             public void onResponse(Call<BoardListResponse> call, Response<BoardListResponse> response) {
-                boards.postValue(response.body().getData());
+                try {
+                    boards.postValue(response.body().getData());
+                } catch (NullPointerException e) {
+                    Log.d(LOG_TAG, "아무것도 안 쓴 상태" + e);
+                }
+
+
             }
 
             @Override
